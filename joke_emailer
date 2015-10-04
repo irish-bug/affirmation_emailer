@@ -1,0 +1,14 @@
+#!/usr/bin/python
+# coding: utf-8 
+import os
+import random
+
+todays_phrase = open("jokes_list.txt", "r").readlines()[random.randint(0,99)]
+todays_email = open("todays_joke.txt", "a+")
+email_start = open("joke_template.txt", "r").readline()
+todays_email.write(email_start)
+todays_email.write(todays_phrase)
+todays_email.close()
+bashCommand = "cat todays_joke.txt  | msmtp jokes"
+os.system(bashCommand)
+os.system("rm todays_joke.txt")
