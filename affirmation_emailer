@@ -3,12 +3,12 @@
 import os
 import random
 
-todays_phrase = open("affirmations_list.txt", "r").readlines()[random.randint(0,99)]
+todays_phrase = open("./affirmations_list.txt", "r").readlines()[random.randint(0,99)]
 todays_email = open("todays_email.txt", "a+")
-email_start = open("email_template.txt", "r").readline()
+email_start = open("./email_template.txt", "r").readline()
 todays_email.write(email_start)
 todays_email.write(todays_phrase)
 todays_email.close()
-bashCommand = "cat todays_email.txt  | msmtp affirmations"
+bashCommand = "cat todays_email.txt  | msmtp banjopuppet@gmail.com"
 os.system(bashCommand)
 os.system("rm todays_email.txt")
