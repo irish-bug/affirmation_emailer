@@ -9,6 +9,6 @@ email_start = open("./email_template.txt", "r").readline()
 todays_email.write(email_start)
 todays_email.write(todays_phrase)
 todays_email.close()
-bashCommand = "cat todays_email.txt  | msmtp banjopuppet@gmail.com"
+bashCommand = "cat todays_email.txt  | msmtp affirmations"
 os.system(bashCommand)
 os.system("rm todays_email.txt")
