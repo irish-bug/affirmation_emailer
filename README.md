@@ -14,3 +14,5 @@ This script was written for Linux by @bust3r_byt3s. It requires msmtp to be inst
   aliases /etc/aliases
  to your .msmtprc file. 
  For best results run this script daily from cron
+ You will also need to replace <path to affirmations_emailer directory> with the path in each executable.
+ 
